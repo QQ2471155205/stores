@@ -1,0 +1,27 @@
+<%- include ./common/header.ejs  %>
+
+<div class="tjtancbg" id></div>
+<div id="tjsji" class="tjtanc">
+    <div class="topBox">
+        <h1>添加手机</h1>
+        <a href="/add/list" class="closeWindow"></a>
+    </div>
+    <form action="http://localhost:4000/add" method="post" enctype="multipart/form-data">
+        <div class="srk">
+            <input class="number intInput radius"type="file" name="pic" />
+
+            <input class="number intInput radius" type="text" name="title"  placeholder="请输入手机名称"/>
+
+            <input class="number intInput radius"type="text" name="description"  placeholder="请输入手机简介"/>
+
+            <input class="number intInput radius"type="text" name="price"  placeholder="请输入手机价格"/>
+
+            <button type="submit" class="sureUp radius20">添加</button>
+
+            <div class="clear"></div>
+            <div class="noNum"></div>
+        </div>
+    </form>
+</div>
+
+<%- include ./common/footer.ejs  %>

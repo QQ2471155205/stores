@@ -1,0 +1,68 @@
+<%- include ./common/header.ejs  %>
+<!-- start danpin -->
+<div class="top center" style="border-bottom: 1px solid #ebebeb;">
+        <div class="logo center">
+			<a href="/add/list"><img src="/images/mistore_logo.png" alt=""></a>
+			<a href="/loginout" class="outs" style="">退出登录</a>
+        </div>
+    </div>
+<div class="danpin center">
+	<div class="biaoti center">品牌手机</div>
+	<div class="main center">
+		<div class="panels">
+            <div class="panel-heading">
+             
+            </div>
+            <div class="panel-body">
+                <form role="form" class="form-inline" method="GET" action="http://localhost:4000/add/list/queryp" enctype="application/x-www-form-urlencoded">
+                    <div class="form-group">
+                        <input type="title" class="" style="padding: 5px 10px;" id="name" name="title" placeholder="请输入商品名称">
+                    </div>
+
+                    <div class="searchs">
+                        <button type="submit" class="searchbtn">搜索</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+		<% for(var i=0;i<arr.length;i++){  %>
+
+		<div class="mingxing fl mb20 mbs">
+			<div class="sub_mingxing">
+				<a href="">
+					<img src="<%=arr[i].pic%>" alt="">
+				</a>
+			</div>
+			<div class="pinpai"><a href="">
+					<%=arr[i].title%>
+				</a></div>
+			<div class="youhui"><%=arr[i].description%>
+				
+			</div>
+			<div class="jiage"><%=arr[i].price%>元
+			</div>
+			<div class="piao" style="display: none;">
+				<a href="/product/update/<%=arr[i].id%>"  class="btnxg buttony"  style="left:-5px;">修改</a>
+                <a href="/product/delete/<%=arr[i].id%>?img=<%=arr[i].pic%>" class="btndle buttony" style="right:20px;">删除</a>
+			</div>
+		</div>
+
+		<% }%>
+
+		<div class="mingxing fl mb20 mbs" style="cursor:pointer;">
+			<div class="sub_mingxing tjsj"><a href="/add"><img src="/images/liebiao_tjxsj.png" alt=""></a></div>
+			<div class="pinpai"><a style="font-size: 22px">添加手机</a></div>
+			<div class="youhui"></div>
+			<div class="jiage"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+
+
+</div>
+<div id="gotoTop" style="display: block;" class="">
+	<a><img style="width: 40px;height: 40px" src="/images/top.png"></a>
+</div>
+
+<%- include ./common/footer.ejs  %>
